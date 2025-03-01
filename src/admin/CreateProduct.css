@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading{
+    color: white;
+}
+
+.productForm{
+    background-color: #10131a;
+    height: 500px;
+    width: 500px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px white;
+}
+
+.productForm-child{
+    height: 50px;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    font-weight: 500;
+    outline: none;
+}
+
+textarea{
+    padding-top: 10px;
+    resize: none;
+}
+
+select{
+    appearance: none;
+}
+
+.btn{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+}
+
+.submit-btn:hover{
+    background-color: rgb(89, 169, 89);
+    color: white;
+}
+
+.internal-link{
+    text-decoration: none;
+    color: rgba(55, 171, 255, 0.995);
+    font-weight: bold;
+}
+
+.delete-btn{
+    background-color: rgb(221, 61, 36);
+    color: white;
+    margin-left: 20px;
+}
+
+.form{
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    justify-content: space-around;
+    padding: 15px;
+    margin-top: 100px;
+}

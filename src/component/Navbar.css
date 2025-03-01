@@ -1,0 +1,125 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+.navbar{
+    display: flex;
+    width: 100vw;
+    height: 100px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+    box-shadow: 2px 5px 3px rgb(59, 62, 62);
+    position: sticky;
+    top: 0;
+    z-index:5 ;
+}
+
+.nav-child{
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    width: fit-content;
+    font-size: 25px;
+    padding-left: 50px;
+    text-shadow: 2px 2px 2px white;
+}
+
+li{
+    list-style: none;
+}
+
+.search{
+    display: flex;
+    justify-content: right;
+    padding-right: 50px;
+}
+
+#search{
+    width: 80%;
+    height: 40%;
+    border-radius: 10px;
+    padding-left: 20px;
+    font-size: 20px;
+    border: none;
+    position: relative;
+    outline: none;
+}
+
+.search-btn{
+    position:absolute;
+    height:40px;
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    background-color: transparent;
+}
+
+.btn:hover{
+    cursor: pointer;
+    
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+}
+
+.logins{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login{
+    width: 200px;
+}
+
+.logo:hover{
+    cursor: pointer;
+    color:bisque;
+}
+
+.slidebar{
+    z-index: 100;
+    height: 100%;
+    width: 20rem;
+    background-color: rgb(162, 58, 136);
+    position: fixed;
+    top: 0;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s ease-in-out;
+    
+}
+
+.active{
+    display: none;
+}
+
+.inactive{
+    display: flex;
+}
+
+.category{
+    font-size: larger;
+    margin-top: 5rem;
+}
+
+.category:hover, i{
+    cursor: pointer;
+    color: gainsboro;
+}
+
+.fa-xmark{
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+}
+

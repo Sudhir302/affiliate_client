@@ -1,0 +1,32 @@
+@media screen and (max-width: 450px){
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .navbar{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    
+    .logo{
+        padding-left: 15px;
+    }
+    .fa-bars{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .search{
+        padding: 0;
+    }
+    .nav-child{
+        width: fit-content;
+        font-size: large;
+    }
+
+    .category{
+        font-size: large;
+        width: fit-content;
+    }
+}
