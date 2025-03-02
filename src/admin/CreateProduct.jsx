@@ -40,11 +40,11 @@ function Admin(){
         <div className="container">
             <div className="navbar">
                 <h1 className="logo nav-child">BAZZAR</h1>
-                <h2 className="nav-child ">Upload Product here</h2>
+                
                 <Link to='/admin/product/list' className="internal-link logo nav-child">Show Products</Link>
             </div>
             <form className='productForm' onSubmit={defaultHandler}>
-            <h2 className='heading'>Enter the details of the product </h2>
+            <h2 className='heading'>Upload the details of the product </h2>
             <input type="text" name="productName" id="productName" placeholder='Title of the Product' className='productForm-child' onChange={productHandler} value={productValue.productName} required/>
 
             <input type="text" id='link' name='productLink' placeholder='Upload Product Link' className='productForm-child' onChange={productHandler} value={productValue.productLink} required/>

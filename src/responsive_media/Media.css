@@ -6,7 +6,7 @@
     .navbar{
         display: flex;
         flex-wrap: nowrap;
-        justify-content: center;
+        justify-content:space-around;
     }
     
     .logo{
@@ -29,4 +29,14 @@
         font-size: large;
         width: fit-content;
     }
+
+    .container{
+        all: unset;
+    }
+
+    .productForm{
+        width: 100vw;
+        margin: 0;
+    }
+
 }
