@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import './Login.css';
 
 function Login(){
     const navigate = useNavigate();
@@ -29,17 +30,45 @@ function Login(){
         }
     }
     return(
-        <div className="container">
-            <div className="navbar">
-                <h1 className="logo nav-child">BAZZAR</h1>
-                <h2 className="nav-child ">Admin Page</h2>
-                <Link to= '/' className="internal-link logo nav-child" >Shop</Link>
+        <div className="admin-container">
+            <div className="admin-navbar">
+                <Link to="/" className="admin-logo">BAZZAR</Link>
+                <h2 className="admin-title">Admin Dashboard</h2>
+                <Link to='/' className="shop-link">Back to Shop</Link>
             </div>
-            <form onSubmit={defaultHandler} className="form">
-                <input type="text" name="username" id="username" value={username} onChange={handleUsername} className="productForm-child" required />
-                <input type="password" name="password" id="password" value={password} onChange={handlePassword} className="productForm-child"  required />
-                <button type="submit" className="btn">Submit</button>
-            </form>
+            
+            <div className="login-wrapper">
+                <div className="login-box">
+                    <h2 className="login-header">Admin Login</h2>
+                    <form onSubmit={defaultHandler} className="login-form">
+                        <div className="form-group">
+                            <label htmlFor="username">Username</label>
+                            <input 
+                                type="text" 
+                                name="username" 
+                                id="username" 
+                                value={username} 
+                                onChange={handleUsername}
+                                placeholder="Enter username"
+                                required 
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="password">Password</label>
+                            <input 
+                                type="password" 
+                                name="password" 
+                                id="password" 
+                                value={password} 
+                                onChange={handlePassword}
+                                placeholder="Enter password"
+                                required 
+                            />
+                        </div>
+                        <button type="submit" className="login-btn">Login</button>
+                    </form>
+                </div>
+            </div>
         </div>
     )
 }

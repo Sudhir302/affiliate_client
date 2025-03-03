@@ -1,8 +1,10 @@
 function Footer(){
     return(
-        <footer>
-            &copy;Sudhir&hearts;
-        </footer>
+        <div className="footer-container">
+            <footer>
+                &copy;Sudhir&hearts;
+            </footer>
+        </div>
     )
 }
 

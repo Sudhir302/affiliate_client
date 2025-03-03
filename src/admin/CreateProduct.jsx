@@ -3,68 +3,146 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './CreateProduct.css'
 
-function Admin(){
+function CreateProduct() {
     const navigate = useNavigate();
-    let [productValue, setProductValue] = useState({productName: "", productLink: "", productImage: "", productDescription: ""});
-    let [productCategory, setProductCategory] = useState("");
+    const [productValue, setProductValue] = useState({
+        productName: "",
+        productLink: "",
+        productImage: "",
+        productDescription: ""
+    });
+    const [productCategory, setProductCategory] = useState("");
 
-    const productHandler = (event)=>{
-        setProductValue({...productValue, [event.target.name]: event.target.value});
-        console.log(productValue)
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setProductValue(prev => ({
+            ...prev,
+            [name]: value
+        }));
     }
 
-    const categoryHandler = (event)=>{
+    const handleCategoryChange = (event) => {
         setProductCategory(event.target.value);
-        console.log(productCategory);
     }
 
-    const defaultHandler = async (event)=>{
+    const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URI}/admin/create`, {productValue, productCategory}, {withCredentials: true});
-            alert(response.data.message)
-            navigate('/admin/product/list')
-            
+            const response = await axios.post(
+                `${import.meta.env.VITE_BACKEND_URI}/admin/create`,
+                { productValue, productCategory },
+                { withCredentials: true }
+            );
+            alert(response.data.message);
+            navigate('/admin/product/list');
         } catch (error) {
-            console.log(error);
+            console.error('Error creating product:', error);
         }
+
+        // Reset form
         setProductValue({
-            productName: "", 
-            productLink: "", 
+            productName: "",
+            productLink: "",
             productImage: "",
             productDescription: "",
         });
         setProductCategory("");
     }
-    return(
+
+    return (
         <div className="container">
-            <div className="navbar">
-                <h1 className="logo nav-child">BAZZAR</h1>
-                
-                <Link to='/admin/product/list' className="internal-link logo nav-child">Show Products</Link>
+            <nav className="navbar">
+                <h1 className="logo">BAZZAR</h1>
+                <Link 
+                    to='/admin/product/list' 
+                    className="view-products-link"
+                >
+                    View Products
+                </Link>
+            </nav>
+
+            <div className="form-container">
+                <form className='product-form' onSubmit={handleSubmit}>
+                    <h2 className='form-heading'>Create New Product</h2>
+                    
+                    <div className="form-group">
+                        <input 
+                            type="text" 
+                            name="productName"
+                            id="productName"
+                            placeholder='Product Title'
+                            className='form-input'
+                            onChange={handleInputChange}
+                            value={productValue.productName}
+                            required
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <input 
+                            type="text"
+                            id='link'
+                            name='productLink'
+                            placeholder='Product URL'
+                            className='form-input'
+                            onChange={handleInputChange}
+                            value={productValue.productLink}
+                            required
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <select 
+                            name="category"
+                            id="category"
+                            className='form-select'
+                            value={productCategory}
+                            onChange={handleCategoryChange}
+                            required
+                        >
+                            <option value="">Select Category</option>
+                            <option value="groceries">Groceries</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="dairy">Dairy</option>
+                            <option value="cosmetics">Beauty Products</option>
+                        </select>
+                    </div>
+
+                    <div className="form-group">
+                        <input 
+                            type="text"
+                            name="productImage"
+                            id="image"
+                            placeholder='Image URL'
+                            className='form-input'
+                            onChange={handleInputChange}
+                            value={productValue.productImage}
+                            required
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <textarea 
+                            name="productDescription"
+                            id="description"
+                            placeholder='Product Description'
+                            className='form-textarea'
+                            onChange={handleInputChange}
+                            value={productValue.productDescription}
+                            required
+                        />
+                    </div>
+
+                    <button 
+                        type="submit" 
+                        className='submit-button'
+                    >
+                        Create Product
+                    </button>
+                </form>
             </div>
-            <form className='productForm' onSubmit={defaultHandler}>
-            <h2 className='heading'>Upload the details of the product </h2>
-            <input type="text" name="productName" id="productName" placeholder='Title of the Product' className='productForm-child' onChange={productHandler} value={productValue.productName} required/>
-
-            <input type="text" id='link' name='productLink' placeholder='Upload Product Link' className='productForm-child' onChange={productHandler} value={productValue.productLink} required/>
-
-            <select name="category" id="category" className=' productForm-child' value={productCategory} onChange={categoryHandler} required>
-                <option value="">Select Category</option>
-                <option value="groceries">Groceries</option>
-                <option value="electronics">Electronics</option>
-                <option value="dairy">Dairy</option>
-                <option value="cosmetics">Beauty Product</option>
-            </select>
-
-            <input type="text" name="productImage" id="image" placeholder='Upload image link' className='productForm-child' onChange={productHandler} value={productValue.productImage} required />
-
-            <textarea name="productDescription" id="description" placeholder='Write description' className='productForm-child' onChange={productHandler} value={productValue.productDescription} required />
-
-            <button type="submit" className='btn submit-btn'>Upload</button>
-        </form>
         </div>
-    )
+    );
 }
 
-export default Admin;
+export default CreateProduct;

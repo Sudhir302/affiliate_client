@@ -1,88 +1,128 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+.container {
+    min-height: 100vh;
+    background-color: #f8fafc;
+    padding: 2rem;
+}
 
-.container{
+.navbar {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 2rem;
 }
 
-.heading{
-    color: white;
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2563eb;
 }
 
-.productForm{
-    background-color: #10131a;
-    height: 500px;
-    width: 500px;
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 2px 2px 2px white;
-}
-
-.productForm-child{
-    height: 50px;
-    width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 15px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: medium;
-    font-weight: 500;
-    outline: none;
-}
-
-textarea{
-    padding-top: 10px;
-    resize: none;
-}
-
-select{
-    appearance: none;
-}
-
-.btn{
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: medium;
-}
-
-.submit-btn:hover{
-    background-color: rgb(89, 169, 89);
-    color: white;
-}
-
-.internal-link{
+.view-products-link {
     text-decoration: none;
-    color: rgba(55, 171, 255, 0.995);
-    font-weight: bold;
+    color: #2563eb;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border: 2px solid #2563eb;
+    border-radius: 6px;
+    transition: all 0.2s ease;
 }
 
-.delete-btn{
-    background-color: rgb(221, 61, 36);
+.view-products-link:hover {
+    background-color: #2563eb;
     color: white;
-    margin-left: 20px;
 }
 
-.form{
-    width: 300px;
-    height: 200px;
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-form {
     display: flex;
     flex-direction: column;
-    border-radius: 15px;
-    justify-content: space-around;
-    padding: 15px;
-    margin-top: 100px;
+    gap: 1.5rem;
+}
+
+.form-heading {
+    font-size: 1.5rem;
+    color: #1e293b;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.submit-button {
+    background-color: #2563eb;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #1d4ed8;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .form-container {
+        padding: 1rem;
+    }
 }

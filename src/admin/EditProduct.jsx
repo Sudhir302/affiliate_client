@@ -1,6 +1,7 @@
 import { useEffect, useState, } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
+import './EditProduct.css';
 
 function EditProduct(){
     const {id} = useParams();
@@ -59,35 +60,86 @@ function EditProduct(){
         editHandler();
     },[])
     return(
-        <div className="container">
-            <div className="navbar">
-                <h1 className="logo nav-child">BAZZAR</h1>
-                <h2 className="nav-child ">Update Or Delete</h2>
-                <Link to= '/admin/product/create' className="internal-link logo nav-child" >Add Product</Link>
+        <div className="edit-container">
+            <div className="edit-navbar">
+                <h1 className="edit-logo">BAZZAR</h1>
+                <h2 className="edit-title">Update Or Delete Product</h2>
+                <Link to="/admin/product/create" className="add-product-link">Add Product</Link>
             </div>
-            <form className='productForm' onSubmit={updateHandler}>
-                <h2 className='heading'>Update details of the product </h2>
-                <input type="text" name="productName" id="productName" placeholder='Title of the Product' className='productForm-child' value={productValue.productName} onChange={handleChange} required/>
 
-                <input type="text" id='link' name='productLink' placeholder='Upload Product Link' className='productForm-child' value={productValue.productLink} onChange={handleChange} required/>
+            <div className="edit-form-container">
+                <form className="edit-form" onSubmit={updateHandler}>
+                    <h2 className="form-heading">Update Product Details</h2>
+                    
+                    <div className="form-group">
+                        <input 
+                            type="text" 
+                            name="productName" 
+                            id="productName" 
+                            placeholder="Title of the Product"
+                            value={productValue.productName} 
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
 
-                <select name="category" id="category" className=' productForm-child' value={productCategory}  onChange={categoryHandler} required>
-                    <option value="">Select Category</option>
-                    <option value="groceries">Groceries</option>
-                    <option value="electronics">Electronics</option>
-                    <option value="dairy">Dairy</option>
-                    <option value="cosmetics">Beauty Product</option>
-                </select>
+                    <div className="form-group">
+                        <input 
+                            type="text" 
+                            name="productLink"
+                            id="link"
+                            placeholder="Upload Product Link"
+                            value={productValue.productLink}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
 
-                <input type="text" name="productImage" id="image" placeholder='Upload image link' className='productForm-child ' value={productValue.productImage} onChange={handleChange} required />
+                    <div className="form-group">
+                        <select 
+                            name="category" 
+                            id="category"
+                            value={productCategory}
+                            onChange={categoryHandler}
+                            required
+                        >
+                            <option value="">Select Category</option>
+                            <option value="groceries">Groceries</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="dairy">Dairy</option>
+                            <option value="cosmetics">Beauty Product</option>
+                        </select>
+                    </div>
 
-                <textarea name="productDescription" id="description" placeholder='Write description' className='productForm-child' value={productValue.productDescription} onChange={handleChange} required />
+                    <div className="form-group">
+                        <input 
+                            type="text"
+                            name="productImage"
+                            id="image"
+                            placeholder="Upload image link"
+                            value={productValue.productImage}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
 
-                <div>
-                <button type="submit" className='btn submit-btn'>Update</button>
-                <button type="button" className="btn delete-btn" onClick={deleteHandler}>DELETE</button>
-                </div>
-            </form>
+                    <div className="form-group">
+                        <textarea
+                            name="productDescription"
+                            id="description"
+                            placeholder="Write description"
+                            value={productValue.productDescription}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
+                    <div className="button-group">
+                        <button type="submit" className="update-btn">Update</button>
+                        <button type="button" className="delete-btn" onClick={deleteHandler}>Delete</button>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 };

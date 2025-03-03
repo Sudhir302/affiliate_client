@@ -14,7 +14,6 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 function App(){
   return(
     <BrowserRouter>
-    <div className='app-container'>
       <Routes>
         <Route path= '/' element={<Home />} />
         <Route path = '/admin' element= {<Login />} />
@@ -24,7 +23,6 @@ function App(){
         <Route path='*' element= {<PageNotFound />} />
       </Routes>
       <Footer />
-      </div>
     </BrowserRouter>
   )
 }

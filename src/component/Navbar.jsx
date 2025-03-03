@@ -50,22 +50,60 @@ function Navbar(){
     }
     return(
         <>
-             <ul className={`nav-child slidebar ${isActive? "inactive": "active"} `}>
-                    <i className="fa-solid fa-xmark" onClick={toogle}></i>
-                    <li data-value="electronics" onClick={handleCategory} className='category' >Electronics</li>
-                    <li data-value="cosmetics" onClick={handleCategory} className='category' >Beauty Product</li>
-                    <li data-value="groceries" onClick={handleCategory} className='category'>Groceries</li>
-                    <li data-value="dairy" onClick={handleCategory} className='category'>Dairy</li>
-                    <div  className="nav-child category"><Googlelogin /></div>
-            </ul>
+             <nav className={`slidebar ${isActive ? "inactive" : "active"}`}>
+
+                    <i className="fa-solid fa-xmark" onClick={toogle}/>
+
+                <ul className="category-list">
+                    <li>
+                        <button 
+                            className="category-btn"
+                            data-value="electronics" 
+                            onClick={handleCategory}
+                        >
+                            Electronics
+                        </button>
+                    </li>
+                    <li>
+                        <button 
+                            className="category-btn"
+                            data-value="cosmetics" 
+                            onClick={handleCategory}
+                        >
+                            Beauty Products
+                        </button>
+                    </li>
+                    <li>
+                        <button 
+                            className="category-btn"
+                            data-value="groceries" 
+                            onClick={handleCategory}
+                        >
+                            Groceries
+                        </button>
+                    </li>
+                    <li>
+                        <button 
+                            className="category-btn"
+                            data-value="dairy" 
+                            onClick={handleCategory}
+                        >
+                            Dairy
+                        </button>
+                    </li>
+                </ul>
+                <div className="login-container">
+                    <Googlelogin />
+                </div>
+            </nav>
             <div className='navbar'>
-                <div className="nav-child logo" onClick={()=> window.location.reload()}>BAZZAR</div>
+                <Link to="/" className="nav-child logo" onClick={()=> window.location.reload()}>BAZZAR</Link>
                 <form className="nav-child search" onSubmit={defaultHandler}>
                     <input type="search" name="search" id="search" placeholder='search...' value={search} onChange={searchHandler} />
                     <button type='submit' className='btn search-btn'><i className="fa-solid fa-magnifying-glass"></i></button>
                 </form>
                 
-                <Link to='/admin' className="login internal-link logo nav-child">Admin</Link>  
+                <Link to='/admin' className="nav-child login" style={{textDecoration: 'none', color: '#1a1a1a', fontWeight: 500}}>Admin</Link>
                 <i className="fa-solid fa-bars nav-child" onClick={toogle}></i>
             </div>
             <Sameproduct categoryProduct = {categorisedProduct}/>
