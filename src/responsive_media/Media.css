@@ -70,9 +70,6 @@
 }
 
 @media screen and (max-width: 480px) {
-    .navbar {
-        padding: 8px 12px;
-    }
 
     .logo, .fa-solid{
         font-size: 1.2rem;
@@ -100,8 +97,8 @@
         width: 100%;
     }
 
-    .admin-title{
-        font-size: 1.2rem;
+    .admin-title, .edit-title, .edit-logo, .add-product-link{
+        font-size: .8rem;
     }
 
     .shop-link{

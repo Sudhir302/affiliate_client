@@ -61,8 +61,8 @@ function EditProduct(){
     },[])
     return(
         <div className="edit-container">
-            <div className="edit-navbar">
-                <h1 className="edit-logo">BAZZAR</h1>
+            <div className="edit-navbar admin-navbar">
+                <h1 className="logo edit-logo">BAZZAR</h1>
                 <h2 className="edit-title">Update Or Delete Product</h2>
                 <Link to="/admin/product/create" className="add-product-link">Add Product</Link>
             </div>

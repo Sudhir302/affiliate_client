@@ -22,7 +22,7 @@ function Productlist(){
 
     return(
         <div>
-            <div className="navbar">
+            <div className="admin-navbar">
                 <h1 className="logo nav-child">BAZZAR</h1>
                 <h2 className="nav-child ">List Of All Product</h2>
                 <Link to= '/admin/product/create' className="internal-link logo nav-child" >Add Product</Link>
