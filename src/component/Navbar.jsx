@@ -50,7 +50,7 @@ function Navbar(){
     }
     return(
         <>
-             <nav className={`slidebar ${isActive ? "inactive" : "active"}`}>
+             <nav className={`slidebar ${isActive ? "active" : "inactive"}`}>
 
                     <i className="fa-solid fa-xmark" onClick={toogle}/>
 

@@ -1,42 +1,99 @@
-@media screen and (max-width: 450px){
-    *{
-        margin: 0;
-        padding: 0;
-    }
-    .navbar{
+@media screen and (max-width: 768px) {
+    .navbar {
         display: flex;
-        flex-wrap: nowrap;
-        justify-content:space-around;
-    }
-    
-    .logo{
-        padding-left: 15px;
-    }
-    .fa-bars{
-        padding-right: 15px;
-        padding-left: 15px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        width: 100%;
     }
 
-    .search{
-        padding: 0;
-    }
-    .nav-child{
-        width: fit-content;
-        font-size: large;
+    .navbar .logo {
+        order: 1;
     }
 
-    .category{
-        font-size: large;
-        width: fit-content;
+    .navbar .search {
+        order: 2;
+        flex: 1;
+        margin: 0 15px;
     }
 
-    .container{
-        all: unset;
+    .navbar .login {
+        order: 3;
     }
 
-    .productForm{
-        width: 100vw;
-        margin: 0;
+    .navbar .admin-login {
+        order: 4;
+        margin-left: 10px;
     }
 
+    .navbar .google-auth {
+        order: 5;
+        margin-left: 10px;
+    }
+
+    /* Sidebar styles */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100vh;
+        background: #fff;
+        transition: 0.3s;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .sidebar .google-auth {
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* Category list styles */
+    .category-list {
+        padding: 10px;
+    }
+
+    .login{
+        display: block;
+    }
+
+    .category-list .google-login {
+        padding: 15px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #eee;
+    }
 }
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 8px 12px;
+    }
+
+    .logo, .fa-solid{
+        font-size: 1.2rem;
+    }
+
+    .navbar .search {
+        margin: 0 8px;
+    }
+
+    .navbar .admin-login,
+    .navbar .google-auth {
+        margin-left: 5px;
+    }
+
+    .category-list .google-login {
+        padding: 10px;
+    }
+}
+
+
+
+
+
