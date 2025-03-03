@@ -32,7 +32,7 @@ function Login(){
     return(
         <div className="admin-container">
             <div className="admin-navbar">
-                <Link to="/" className="admin-logo">BAZZAR</Link>
+                <Link to="/" className="admin-logo logo">BAZZAR</Link>
                 <h2 className="admin-title">Admin Dashboard</h2>
                 <Link to='/' className="shop-link">Back to Shop</Link>
             </div>

@@ -7,7 +7,6 @@
         padding: 10px 20px;
         width: 100%;
     }
-
     .navbar .logo {
         order: 1;
     }
@@ -91,7 +90,29 @@
     .category-list .google-login {
         padding: 10px;
     }
+
+    .admin-navbar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+    .admin-title{
+        font-size: 1.2rem;
+    }
+
+    .shop-link{
+        font-size: 0.9rem;
+        padding: 5px 10px;
+        margin-top: 5px;
+    }
 }
+
+
+
 
 
 
