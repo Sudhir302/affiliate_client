@@ -1,0 +1,208 @@
+/* Products.css */
+
+/* Container for all products */
+.products-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .products-heading {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  /* Products grid layout */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  /* Individual product card */
+  .product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Product link covers the entire card */
+  .product-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    position: relative;
+  }
+  
+  /* Image container with fixed height */
+  .product-image-container {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .product-card:hover .product-image {
+    transform: scale(1.05);
+  }
+  
+  /* Product information section */
+  .product-info {
+    padding: 1rem;
+  }
+  
+  .product-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2d3748;
+    margin: 0 0 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4;
+    height: 2.8rem;
+  }
+  
+  .product-price {
+    display: block;
+    font-weight: 600;
+    color: #3182ce;
+    font-size: 1.125rem;
+  }
+  
+  /* Overlay effect on hover */
+  .product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .product-card:hover .product-overlay {
+    opacity: 1;
+  }
+  
+  .view-product {
+    background-color: #fff;
+    color: #2d3748;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+    transform: translateY(10px);
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover .view-product {
+    transform: translateY(0);
+  }
+  
+  /* Skeleton loading animation */
+  @keyframes pulse {
+    0% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0.6;
+    }
+  }
+  
+  .skeleton {
+    animation: pulse 1.5s infinite;
+  }
+  
+  .product-image-skeleton {
+    height: 200px;
+    background-color: #e2e8f0;
+  }
+  
+  .product-info-skeleton {
+    padding: 1rem;
+  }
+  
+  .product-name-skeleton {
+    height: 1rem;
+    background-color: #e2e8f0;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+  }
+  
+  .product-price-skeleton {
+    height: 1.125rem;
+    background-color: #e2e8f0;
+    width: 40%;
+    border-radius: 4px;
+  }
+  
+  /* Error message styling */
+  .error-message {
+    background-color: #fed7d7;
+    color: #c53030;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  /* Empty state message */
+  .no-products-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem 0;
+    color: #718096;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .products-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    
+    .products-heading {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .product-image-container {
+      height: 150px;
+    }
+    
+    .product-name {
+      font-size: 0.875rem;
+      height: 2.45rem;
+    }
+    
+    .product-price {
+      font-size: 1rem;
+    }
+  }

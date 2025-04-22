@@ -1,7 +1,14 @@
-import { useEffect, useState, } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+// import { useEffect, useState, } from "react";
+// import { useParams, useNavigate, Link } from "react-router-dom";
+// import axios from "axios";
+// import './EditProduct.css';
+// import ComNav from "./ComNav";
+
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import './EditProduct.css';
+import "../styles/EditProduct.css";
+import ComNav from "../components/ComNav";
 
 function EditProduct(){
     const {id} = useParams();
@@ -61,12 +68,7 @@ function EditProduct(){
     },[])
     return(
         <div className="edit-container">
-            <div className="edit-navbar admin-navbar">
-                <h1 className="logo edit-logo">BAZZAR</h1>
-                <h2 className="edit-title">Update Or Delete Product</h2>
-                <Link to="/admin/product/create" className="add-product-link">Add Product</Link>
-            </div>
-
+            <ComNav text ="update or delete" path="/admin/product/create" pathText= "Add product" />
             <div className="edit-form-container">
                 <form className="edit-form" onSubmit={updateHandler}>
                     <h2 className="form-heading">Update Product Details</h2>

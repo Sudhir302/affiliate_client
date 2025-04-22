@@ -1,9 +1,9 @@
-import '../component/Navbar.css';
-import Sameproduct from './Sameproduct';
-import Googlelogin from './Googlelogin';
+import "../styles/Navbar.css";
+import Sameproduct from "./Sameproduct";
+import Googlelogin from "./Googlelogin";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import axios from "axios";
 
 function Navbar(){
     let [search, setSearch] = useState('')
@@ -95,7 +95,7 @@ function Navbar(){
                 <div className="login-container">
                     <Googlelogin />
                 </div>
-            </nav>
+            </nav> 
             <div className='navbar'>
                 <Link to="/" className="nav-child logo" onClick={()=> window.location.reload()}>BAZZAR</Link>
                 <form className="nav-child search" onSubmit={defaultHandler}>
@@ -103,7 +103,7 @@ function Navbar(){
                     <button type='submit' className='btn search-btn'><i className="fa-solid fa-magnifying-glass"></i></button>
                 </form>
                 
-                <Link to='/admin' className="nav-child login" style={{textDecoration: 'none', color: '#1a1a1a', fontWeight: 500}}>Admin</Link>
+                <Link to='/admin' className="nav-child login" style={{textDecoration: 'none', color: '#1a1a1a', fontWeight: 500}}> Login as Admin</Link>
                 <i className="fa-solid fa-bars nav-child" onClick={toogle}></i>
             </div>
             <Sameproduct categoryProduct = {categorisedProduct}/>

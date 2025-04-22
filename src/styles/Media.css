@@ -1,0 +1,16 @@
+@media (max-width: 768px) {
+    .com-nav {
+        gap: 1rem;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 1.2rem;
+        margin: 0;
+    }
+
+    .add-product-link {
+        font-size: 0.95rem;
+    }
+}

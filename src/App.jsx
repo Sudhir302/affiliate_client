@@ -1,14 +1,26 @@
-import Home from './Home';
-import CreateProduct from "./admin/CreateProduct";
-import Productlist from './admin/Productlist';
-import Protected from './utils/Protected';
-import PageNotFound from './component/PageNotFound';
-import EditProduct from './admin/EditProduct';
-import Login from './admin/Login';
-import './responsive_media/Media.css';
-import './App.css'
-import Footer from './component/Footer';
+// import Home from './Home';
+// import CreateProduct from "./admin/CreateProduct";
+// import Productlist from './admin/Productlist';
+// import Protected from './utils/Protected';
+// import PageNotFound from './component/PageNotFound';
+// import EditProduct from './admin/EditProduct';
+// import Login from './admin/Login';
+// import './responsive_media/Media.css';
+// import './App.css'
+// import Footer from './component/Footer';
+// import {BrowserRouter, Routes, Route} from 'react-router-dom';
+
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Home from "./Home";
+import CreateProduct from "./pages/CreateProduct";
+import Productlist from "./pages/Productlist";
+import Protected from "./utils/Protected";
+import EditProduct from "./pages/EditProduct";
+import Login from "./pages/Login";
+import "./app.css";
+import Footer from "./components/Footer";
+import PageNotFound from "./pages/PageNotFound"
+import "./styles/Media.css"
 
 
 function App(){

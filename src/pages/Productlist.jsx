@@ -1,6 +1,14 @@
+// import axios from "axios";
+// import { useEffect, useState } from "react";
+// import { Link } from "react-router-dom";
+// import "./Productlist.css"
+// import ComNav from "./ComNav";
+
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "../styles/Productlist.css";
+import ComNav from "../components/ComNav";
 
 function Productlist(){
     let [products, setProduct] = useState([]);
@@ -22,11 +30,7 @@ function Productlist(){
 
     return(
         <div>
-            <div className="admin-navbar">
-                <h1 className="logo nav-child">BAZZAR</h1>
-                <h2 className="nav-child ">List Of All Product</h2>
-                <Link to= '/admin/product/create' className="internal-link logo nav-child" >Add Product</Link>
-            </div>
+            <ComNav title= "List of All Product" path= "/admin/product/create" pathText="Add Product" />
             <div className='parent-card'>
             {products.map((product)=>(
                 <div className="child-card cur-pointer " key={product._id}>

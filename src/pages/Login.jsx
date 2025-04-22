@@ -1,7 +1,15 @@
+// import axios from "axios";
+// import { useState } from "react";
+// import { Link, useNavigate } from "react-router-dom";
+// import './Login.css';
+// import ComNav from "./ComNav";
+
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import './Login.css';
+import "../styles/Login.css";
+import ComNav from "../components/ComNav";
+
 
 function Login(){
     const navigate = useNavigate();
@@ -31,12 +39,7 @@ function Login(){
     }
     return(
         <div className="admin-container">
-            <div className="admin-navbar">
-                <Link to="/" className="admin-logo logo">BAZZAR</Link>
-                <h2 className="admin-title">Admin Dashboard</h2>
-                <Link to='/' className="shop-link">Back to Shop</Link>
-            </div>
-            
+            <ComNav title= "Login as Admin" path= "/" pathText= "Back to Shop" />            
             <div className="login-wrapper">
                 <div className="login-box">
                     <h2 className="login-header">Admin Login</h2>

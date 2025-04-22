@@ -1,7 +1,14 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import './CreateProduct.css'
+// import { useState } from 'react';
+// import { Link, useNavigate } from 'react-router-dom';
+// import axios from 'axios';
+// import './CreateProduct.css'
+// import ComNav from './ComNav';
+
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import "../styles/CreateProduct.css";
+import ComNav from "../components/ComNav";
 
 function CreateProduct() {
     const navigate = useNavigate();
@@ -51,20 +58,10 @@ function CreateProduct() {
 
     return (
         <div className="container">
-            <nav className="navbar">
-                <h1 className="logo">BAZZAR</h1>
-                <Link 
-                    to='/admin/product/list' 
-                    className="view-products-link"
-                >
-                    View Products
-                </Link>
-            </nav>
-
+            <ComNav text = "" path= "/admin/product/list" pathText= "Product List" />
             <div className="form-container">
                 <form className='product-form' onSubmit={handleSubmit}>
                     <h2 className='form-heading'>Create New Product</h2>
-                    
                     <div className="form-group">
                         <input 
                             type="text" 
