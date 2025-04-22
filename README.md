@@ -23,10 +23,10 @@ You can find the backend source code here:
 ## Screenshots
 
 <p >
-    <img src="./screenshots/desk4.png" width="450"/>
-    <img src="./screenshots/desk3.png" width="450"/>
     <img src="./screenshots/desk1.png" width="450"/>
     <img src="./screenshots/desk2.png" width="450"/>
+    <img src="./screenshots/desk3.png" width="450"/>
+    <img src="./screenshots/desk4.png" width="450"/>
     <br />
     <img src="./screenshots/mob1.png" height="500"/>
     <img src="./screenshots/mob2.png" height="500"/>
@@ -73,7 +73,7 @@ You can find the backend source code here:
     npm run dev
 
 ## 📂 Folder Structure (Frontend)
-
+```
 src/
 ├── components/
 |   ├── ComNav.jsx
@@ -99,7 +99,7 @@ src/
 ├──utils
 |    ├── Protected.jsx
 |
-
+```
 
 ## 📄 License
 
