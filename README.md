@@ -12,6 +12,10 @@ This fronted app works together with a Node.js + express backend.
 You can find the backend source code here:
 [affiliate-server (Backend Repo)](https://github.com/Sudhir302/affiliate_server.git)
 
+Live on👉: [BAZZAR](http://affiliate-client-git-main-sudhir-chaudharys-projects.vercel.app)
+- USER_NAME: BAZZAR_ADMIN
+- USER_PASSWORD: BAZZAR_PASSWORD
+
 ## 🚀 Features
     - Responsive UI for desktop and mobile
     - Product search with real-time filtering
